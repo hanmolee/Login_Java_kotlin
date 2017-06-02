@@ -7,70 +7,87 @@
     android:layout_height="match_parent"
     tools:context="com.iot.login_java_kotlin.MainActivity">
 
+    <TextView
+        android:id="@+id/account"
+        android:textSize="20dp"
+        android:layout_width="110dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:text="MyAccount"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnToBank"/>
+
+    <TextView
+        android:id="@+id/bank"
+        android:layout_width="110dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Bank"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <Button
         android:id="@+id/goBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:text="GO BACk"
-        app:layout_constraintTop_toBottomOf="@+id/txvJane"
+        app:layout_constraintTop_toBottomOf="@+id/txvMyAccount"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="8dp"/>
 
     <Button
-        android:id="@+id/btnThomas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="To Thomas"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txvThomas"/>
+        android:id="@+id/btnToBank"
+        android:layout_width="103dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="15dp"
+        android:text="To Bank"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bank"/>
 
     <TextView
-        android:id="@+id/txvJane"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:id="@+id/txvMyAccount"
+        android:textSize="30dp"
+        android:layout_width="258dp"
+        android:layout_height="36dp"
+        android:layout_marginRight="0dp"
         android:text="5000"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToJane"/>
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/edtAmount"
+        app:layout_constraintLeft_toRightOf="@+id/account"
+        android:layout_marginLeft="8dp"/>
 
     <TextView
-        android:id="@+id/txvThomas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:id="@+id/txvBank"
+        android:textSize="30dp"
+        android:layout_width="258dp"
+        android:layout_height="36dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
         android:text="10000"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <Button
-        android:id="@+id/btnToJane"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/bank"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="To Jane"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txvThomas"/>
+        app:layout_constraintHorizontal_bias="1.0"/>
 
     <EditText
         android:id="@+id/edtAmount"
-        android:layout_width="0dp"
-        android:layout_height="36dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:textSize="30dp"
+        android:layout_width="255dp"
+        android:layout_height="49dp"
+        android:layout_marginRight="6dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnThomas"
-        app:layout_constraintLeft_toRightOf="@+id/btnToJane"
-        app:layout_constraintRight_toLeftOf="@+id/btnThomas"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/btnToBank"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/txvBank"
+        app:layout_constraintHorizontal_bias="0.0"/>
 </android.support.constraint.ConstraintLayout>
