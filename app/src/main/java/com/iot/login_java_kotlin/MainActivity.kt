@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         goBack.setOnClickListener {
-            val intent = Intent(applicationContext as Context, LoginActivity::class.java)
+            val intent = Intent(applicationContext as Context, MenuActivity::class.java)
             startActivity(intent)
             finish()
 

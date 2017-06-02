@@ -1,7 +1,8 @@
 package com.iot.login_java_kotlin
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.toast
@@ -23,12 +24,18 @@ class LoginActivity : AppCompatActivity() {
 
             if (PASSWORD.equals(Input_PW.toString())){//입력한 비밀번호가 맞다면
 
-                val fragmentManager = supportFragmentManager
+                var intent = Intent(applicationContext as Context, MenuActivity::class.java)
+                startActivity(intent)
+
+
+                /*val fragmentManager = supportFragmentManager
                 val fragmentTransaction = fragmentManager.beginTransaction()
                 val menufragment = fragmentManager.findFragmentById(R.id.fragment_one) as MenuFragment
                 fragmentTransaction.add(menufragment as Fragment,"")
 
-                fragmentTransaction.commit()
+                fragmentTransaction.commit()*/
+
+
 
             }
             else
