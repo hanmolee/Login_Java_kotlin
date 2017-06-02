@@ -1,5 +1,6 @@
 package com.iot.login_java_kotlin
 
+import Fragment.FragmentTwo
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -20,7 +21,13 @@ class MenuActivity : AppCompatActivity() {
 
         btnOff.setOnClickListener {
 
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            val fragment2 = FragmentTwo()
+            fragmentTransaction.replace(R.id.power, fragment2)
+            fragmentTransaction.commit()
 
+            finish()
         }
     }
 }
