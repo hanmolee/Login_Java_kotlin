@@ -12,6 +12,8 @@ class LoginActivity : AppCompatActivity() {
 
     val SUBMIT : Int = 1000
     val PASSWORD : String = "12"
+    val REQUEST_CODE : Int = 100
+    var RESULT_CODE : Int = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,8 +26,19 @@ class LoginActivity : AppCompatActivity() {
 
             if (PASSWORD.equals(Input_PW.toString())){//입력한 비밀번호가 맞다면
 
-                var intent = Intent(applicationContext as Context, MenuActivity::class.java)
-                startActivity(intent)
+                var intnet = Intent(applicationContext as Context, MenuActivity::class.java)
+                var data : ParcelData = ParcelData(12, "Power on!!")
+                intnet.putExtra("data", data)
+                startActivityForResult(intnet, REQUEST_CODE)
+
+
+                if (RESULT_CODE == 888){
+
+                    var intnet = Intent(applicationContext as Context, MainActivity::class.java)
+                    startActivity(intnet)
+                }
+
+
 
 
                 /*val fragmentManager = supportFragmentManager
@@ -43,5 +56,16 @@ class LoginActivity : AppCompatActivity() {
 
         }
 
+
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        this.RESULT_CODE = resultCode
+
+        if (data != null){
+            toast("requestCode : " + requestCode + "\n" + "resultCode : "+resultCode)
+        }
     }
 }

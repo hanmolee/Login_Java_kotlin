@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         goBack.setOnClickListener {
-            val intent = Intent(applicationContext as Context, MenuActivity::class.java)
+            val intent = Intent(applicationContext as Context, LoginActivity::class.java)
             startActivity(intent)
             finish()
 
@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         btnToBank.setOnClickListener {
             transferMoney(_myaccount, _bank)
+
+            finish()
         }
 
         refreshBalances()
